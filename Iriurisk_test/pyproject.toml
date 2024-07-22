@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "iriurisk_test"
+version = "0.1.0"
+description = ""
+authors = ["Malik GAruba <garubamalik@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+api = "iriurisk_test.main:run"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^1.36.0"
+fastapi = "^0.111.1"
+uvicorn = "^0.30.3"
+python-dotenv = "^1.0.1"
+langchain-openai = "^0.1.17"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

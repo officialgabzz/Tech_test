@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  ui:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ui
+    env_file:
+      - .env_file
+    ports:
+      - "8501:8501"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  backend:
+    build: 
+      context: ../iriurisk_test/
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env_file
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
